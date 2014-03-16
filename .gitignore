@@ -1,7 +1,11 @@
 *.class
+build/
 
 # Package Files #
 *.jar
 *.war
 *.ear
-/build
+
+# eclipse workspace
+.metadata/
+RemoteSystemsTempFiles/

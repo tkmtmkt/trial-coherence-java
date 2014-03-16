@@ -6,13 +6,14 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COHERENCE">
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lib_unmanaged">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 			<attribute name="owner.project.facets" value="oracle.coherence"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=integration&amp;ivyXmlPath=version.xml&amp;confs=*&amp;ivySettingsPath=%24%7Bworkspace_loc%7D%2Fproduct%2Fcommon%2Fivysettings.xml&amp;loadSettingsOnDemand=false&amp;ivyUserDir=%24%7Bworkspace_loc%7D%2Frepository&amp;propertyFiles="/>
 	<classpathentry exported="true" kind="con" path="oracle.eclipse.tools.coherence.gar.libs.container"/>
-	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

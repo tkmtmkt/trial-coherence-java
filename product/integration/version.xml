@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+
+    <info organisation="com.github.tkmtmkt.study.coherence"
+          module="app"
+          revision="0.1"
+          status="integration"/>
+
+    <configurations defaultconfmapping="compile->default;test->default">
+        <conf name="default" extends="runtime,master" />
+        <conf name="master" />
+        <conf name="compile" />
+        <conf name="runtime" extends="compile" />
+        <conf name="test" visibility="private" extends="runtime" />
+        <conf name="sources" />
+        <conf name="javadoc" />
+    </configurations>
+
+    <publications>
+        <artifact name="study-coherence" type="jar" ext="jar" conf="master" />
+        <artifact name="study-coherence" type="sources" ext="jar" conf="sources" />
+        <artifact name="study-coherence" type="javadoc" ext="jar" conf="javadoc" />
+    </publications>
+
+    <dependencies>
+        <dependency name="coherence-data" rev="latest.integration" conf="compile" />
+        <dependency name="coherence-app"  rev="latest.integration" conf="compile" />
+        <dependency org="org.slf4j" name="slf4j-log4j12" rev="1.7.5" conf="compile" />
+    </dependencies>
+</ivy-module>
+<!-- vim: set ts=4 sw=4 et: -->

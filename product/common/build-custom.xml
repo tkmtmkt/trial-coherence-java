@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="build-custom" default="build"
+    xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <target name="download" depends="init-ivy"
+        description="--> ">
+
+        <ivy:install from="public" to="downloaded" transitive="true"
+            organisation="commons-lang"
+                  module="commons-lang"
+                revision="2.0" />
+    </target>
+</project>
+<!-- vim: set ts=4 sw=4 et: -->

@@ -1,5 +1,7 @@
 *.class
-build/
+target/
+/repository
+/tool
 
 # Package Files #
 *.jar
@@ -7,5 +9,5 @@ build/
 *.ear
 
 # eclipse workspace
-.metadata/
-RemoteSystemsTempFiles/
+/.metadata
+/RemoteSystemsTempFiles

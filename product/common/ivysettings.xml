@@ -1,0 +1,24 @@
+<ivysettings>
+    <settings defaultResolver="default"/>
+
+    <property name="ivy.downloaded.default.root"             value="${ivy.default.ivy.user.dir}/downloaded" override="false"/>
+    <property name="ivy.downloaded.default.ivy.pattern"      value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" override="false"/>
+    <property name="ivy.downloaded.default.artifact.pattern" value="[organisation]/[module]/[revision]/[type]s/[artifact].[ext]" override="false"/>
+
+    <include url="${ivy.default.settings.dir}/ivysettings-public.xml"/>
+    <include url="${ivy.default.settings.dir}/ivysettings-shared.xml"/>
+    <include url="${ivy.default.settings.dir}/ivysettings-local.xml"/>
+    <resolvers>
+        <filesystem name="downloaded">
+            <ivy pattern="${ivy.downloaded.default.root}/${ivy.downloaded.default.ivy.pattern}" />
+            <artifact pattern="${ivy.downloaded.default.root}/${ivy.downloaded.default.artifact.pattern}" />
+        </filesystem>
+        <chain name="main" dual="true">
+            <resolver ref="shared"/>
+            <resolver ref="downloaded"/>
+            <resolver ref="public"/>
+        </chain>
+    </resolvers>
+    <include url="${ivy.default.settings.dir}/ivysettings-default-chain.xml"/>
+</ivysettings>
+<!-- vim: set ts=4 sw=4 et: -->

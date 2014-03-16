@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="build" default="build">
+    <property name="workspace.dir" value="${basedir}/.." />
+    <property name="root.dir" value="${workspace.dir}/.." />
+    <property name="common.dir" value="${root.dir}/product/common" />
+
+    <import file="${basedir}/build-custom.xml" optional="true" />
+    <import file="${common.dir}/common.xml" />
+</project>
+<!-- vim: set ts=4 sw=4 et: -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="GROOVY_SUPPORT"/>
+	<classpathentry kind="con" path="GROOVY_DSL_SUPPORT"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/lib_unmanaged"/>
+	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=app-main&amp;ivyXmlPath=version.xml&amp;confs=*&amp;ivySettingsPath=%24%7Bworkspace_loc%7D%2Fproduct%2Fcommon%2Fivysettings.xml&amp;loadSettingsOnDemand=false&amp;ivyUserDir=%24%7Bworkspace_loc%7D%2Frepository&amp;propertyFiles="/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

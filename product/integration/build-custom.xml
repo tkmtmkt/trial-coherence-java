@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="build-custom" default="build"
+    xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <target name="package" depends="init-ivy"
+        description="--> ">
+
+    </target>
+
+    <target name="publish" depends="package"
+        description="--> ">
+
+    </target>
+
+    <!-- ========================================================== -->
+    <!-- 一括実行タスク -->
+    <!-- ========================================================== -->
+    <target name="buildlist" depends="init-ivy">
+        <ivy:buildlist reference="build-path">
+            <fileset dir="${workspace.dir}">
+                <include name="**/build.xml" />
+                <exclude name="common/build.xml" />
+                <exclude name="integration/build.xml" />
+            </fileset>
+        </ivy:buildlist>
+    </target>
+
+    <target name="all-build" depends="buildlist"
+        description="--> ">
+
+        <subant target="build" buildpathref="build-path" />
+    </target>
+
+    <target name="all-clean" depends="buildlist"
+        description="--> ">
+
+        <subant target="clean" buildpathref="build-path" />
+    </target>
+
+    <target name="all-publish" depends="buildlist"
+        description="--> ">
+
+        <subant target="publish" buildpathref="build-path" />
+    </target>
+
+    <target name="all-publish-local" depends="buildlist"
+        description="--> ">
+
+        <subant target="publish-local" buildpathref="build-path" />
+    </target>
+
+    <target name="all-clean-local" depends="buildlist"
+        description="--> ">
+
+        <subant target="clean-local" buildpathref="build-path" />
+    </target>
+</project>
+<!-- vim: set ts=4 sw=4 et: -->

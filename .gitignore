@@ -1,5 +1,7 @@
 *.class
 target/
+bin/
+log/
 /repository
 /tool
 

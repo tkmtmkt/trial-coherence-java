@@ -2,5 +2,6 @@
     <wb-module deploy-name="integration">
         <wb-resource deploy-path="/" source-path="/src"/>
         <wb-resource deploy-path="/lib" source-path="/lib"/>
+        <wb-resource deploy-path="/" source-path="/test/src"/>
     </wb-module>
 </project-modules>

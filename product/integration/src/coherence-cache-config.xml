@@ -30,7 +30,7 @@ Elements" page on the Coherence Wiki (http://wiki.tangosol.com).
 
     Example values include: java, pof. Default value is java.
     -->
-    <serializer system-property="tangosol.coherence.serializer"/>
+    <serializer system-property="tangosol.coherence.serializer">pof</serializer>
 
     <!--
     Note: This element defines the default socket-provider for all Coherence

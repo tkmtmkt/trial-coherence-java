@@ -2,10 +2,10 @@ package com.github.tkmtmkt.study.coherence.pof;
 
 import org.junit.Test;
 
-import com.github.tkmtmkt.study.coherence.pof.Example;
+import com.github.tkmtmkt.study.coherence.pof.Target;
 
 public class ExampleBTest {
-    private Example example = new Example();
+    private Target example = new Target();
 
     @Test
     public void countString() {

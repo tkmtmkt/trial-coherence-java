@@ -216,7 +216,7 @@
         description="--> ユニットテストを実施します。">
 
         <mkdir dir="${report.junit.dir}" />
-        <junit fork="yes" printsummary="yes" haltonfailure="no">
+        <junit fork="yes" printsummary="yes" haltonfailure="no" dir="${report.junit.dir}">
             <classpath>
                 <pathelement location="${main.classes.dir}" />
                 <pathelement location="${test.classes.dir}" />

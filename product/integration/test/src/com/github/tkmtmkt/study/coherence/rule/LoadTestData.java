@@ -3,9 +3,6 @@ package com.github.tkmtmkt.study.coherence.rule;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
-import org.apache.log4j.RollingFileAppender;
 import org.junit.rules.ExternalResource;
 
 import com.github.tkmtmkt.study.coherence.pof.Action;
@@ -14,12 +11,6 @@ import com.tangosol.net.CacheFactory;
 import com.tangosol.net.NamedCache;
 
 public class LoadTestData extends ExternalResource {
-
-    private static final String LOG_FILE_FORMAT = "log/%s.log";
-
-    private static final String MAX_FILE_SIZE = "2MB";
-
-    private static final int MAX_BACKUP_INDEX = 5;
 
     private final Class<?> clazz;
 
@@ -31,19 +22,12 @@ public class LoadTestData extends ExternalResource {
     protected void before() throws Throwable {
         super.before();
 
-        //ログ設定
-        PatternLayout layout = new PatternLayout("%m%n");
-
-        String logFile = String.format(LOG_FILE_FORMAT, this.clazz.getName());
-        RollingFileAppender appender = new RollingFileAppender(layout, logFile, false);
-        appender.setMaxFileSize(MAX_FILE_SIZE);
-        appender.setMaxBackupIndex(MAX_BACKUP_INDEX);
-
-        Logger logger = Logger.getLogger(this.clazz);
-        logger.removeAllAppenders();
-        logger.addAppender(appender);
-
         //データロード
+        /*
+         * 固定のディレクトリ名またはファイル名からデータをロードする
+         * 処理を定義する。
+         * ※とりあえず動作確認のために決め打ちでデータを突っ込んでみた。
+         */
         NamedCache targetCache = CacheFactory.getCache("dist-targets");
 
         Target target = new Target();

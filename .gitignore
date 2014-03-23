@@ -2,13 +2,16 @@
 target/
 bin/
 log/
-/repository
-/tool
+exec/
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+# ant+ivy2
+/repository
+/tool
 
 # eclipse workspace
 /.metadata

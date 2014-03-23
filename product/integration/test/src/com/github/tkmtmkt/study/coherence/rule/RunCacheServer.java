@@ -38,7 +38,7 @@ public class RunCacheServer extends ExternalResource {
          */
         BasicConfigurator.resetConfiguration();
         BasicConfigurator.configure(new ConsoleAppender(
-                new PatternLayout("%8r [%t] %-5p %1c - %m%n")));
+                new PatternLayout("%8r [%t] %-5p %c{2} - %m%n")));
 
         /*
          * テストコード内のログは別ファイルに出力するようにして、プロダクション
@@ -55,18 +55,14 @@ public class RunCacheServer extends ExternalResource {
         logger.removeAllAppenders();
         logger.addAppender(appender);
 
-        Logger loggerTest = Logger.getLogger("Test");
-        loggerTest.removeAllAppenders();
-        loggerTest.addAppender(appender);
-
         //Cohrence単体起動設定
-        System.setProperty("tangosol.coherence.cluster", System.getProperty("user.name"));
+        System.setProperty("tangosol.coherence.cluster", System.getenv("USERNAME"));
         System.setProperty("tangosol.coherence.clusterport", "12345");
         System.setProperty("tangosol.coherence.localhost", "127.0.0.1");
         System.setProperty("tangosol.coherence.ttl", "0");
         System.setProperty("tangosol.coherence.distributed.localstorage", "true");
 
-        //JMX管理設定（）
+        //JMX管理設定（テスト実行で再起動繰り返すので管理不能）
         System.setProperty("tangosol.coherence.management", "none");
         System.setProperty("tangosol.coherence.management.remote", "false");
 

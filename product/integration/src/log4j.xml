@@ -10,8 +10,22 @@
         </layout>
     </appender>
 
+    <appender name="file" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="TEST.txt" />
+        <param name="MaxFileSize" value="2MB" />
+        <param name="MaxBackupIndex" value="5" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%8r [%t] %-5p %c - %m%n" />
+        </layout>
+    </appender>
+
+    <logger name="Coherence">
+        <level value ="info" />
+        <appender-ref ref="file" />
+    </logger>
+
     <root>
-        <level value ="debug" />
+        <level value ="info" />
         <appender-ref ref="stdout" />
     </root>
 </log4j:configuration>

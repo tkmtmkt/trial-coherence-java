@@ -52,7 +52,7 @@ public class SampleTest {
 
     @Test
     public void 動作確認() {
-        Debug.printCache("dist-targets");
+        Debug.printCache(logger, "dist-targets");
 
         NamedCache targetCache = CacheFactory.getCache("dist-targets");
         Target target = (Target) targetCache.get("0001");

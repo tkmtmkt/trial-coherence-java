@@ -44,16 +44,20 @@ public class RunCacheServer extends ExternalResource {
          * テストコード内のログは別ファイルに出力するようにして、プロダクション
          * コードの実行時出力に混ざることの無いようにする。
          */
-        PatternLayout layout = new PatternLayout(LOG_PATTERN);
-        String logFile = String.format(LOG_FILE_FORMAT, this.clazz.getName());
+        final PatternLayout layout = new PatternLayout(LOG_PATTERN);
+        final String logFile = String.format(LOG_FILE_FORMAT, this.clazz.getName());
 
-        RollingFileAppender appender = new RollingFileAppender(layout, logFile, false);
+        final RollingFileAppender appender = new RollingFileAppender(layout, logFile, false);
         appender.setMaxFileSize(MAX_FILE_SIZE);
         appender.setMaxBackupIndex(MAX_BACKUP_INDEX);
 
         Logger logger = Logger.getLogger(this.clazz);
         logger.removeAllAppenders();
         logger.addAppender(appender);
+
+        Logger loggerTest = Logger.getLogger("Test");
+        loggerTest.removeAllAppenders();
+        loggerTest.addAppender(appender);
 
         //Cohrence単体起動設定
         System.setProperty("tangosol.coherence.cluster", System.getProperty("user.name"));
@@ -77,7 +81,7 @@ public class RunCacheServer extends ExternalResource {
 
     @Override
     protected void after() {
-        Logger logger = Logger.getLogger(this.clazz);
+        final Logger logger = Logger.getLogger(this.clazz);
 
         //Coherenceクラスタ停止
         CacheFactory.shutdown();

@@ -18,6 +18,7 @@ import com.github.tkmtmkt.study.coherence.pof.Action;
 import com.github.tkmtmkt.study.coherence.pof.Target;
 import com.github.tkmtmkt.study.coherence.rule.LoadTestData;
 import com.github.tkmtmkt.study.coherence.rule.RunCacheServer;
+import com.github.tkmtmkt.study.coherence.util.Debug;
 import com.tangosol.net.CacheFactory;
 import com.tangosol.net.NamedCache;
 
@@ -51,9 +52,10 @@ public class SampleTest {
 
     @Test
     public void 動作確認() {
+        Debug.printCache("dist-targets");
+
         NamedCache targetCache = CacheFactory.getCache("dist-targets");
         Target target = (Target) targetCache.get("0001");
-        logger.debug(target.toString());
 
         assertThat("Nameが「大和」であること。", target.getName(), is("大和"));
         assertThat("speedが「40」であること。", target.getSpeed(), is(40));

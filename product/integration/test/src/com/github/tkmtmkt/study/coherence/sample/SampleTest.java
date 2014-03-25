@@ -52,6 +52,8 @@ public class SampleTest {
 
     @Test
     public void 動作確認() {
+        Debug.printCache(logger);
+
         Debug.printCache(logger, "dist-targets");
 
         NamedCache targetCache = CacheFactory.getCache("dist-targets");
